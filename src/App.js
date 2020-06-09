@@ -21,7 +21,7 @@ const App = (props) => {
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
-        <Total car={props.car} carprice={props.car.price} additionalPrice={props.additionalFeatures.price} />
+        <Total car={props.car} carprice={props.car.price} />
       </div>
     </div>
   );

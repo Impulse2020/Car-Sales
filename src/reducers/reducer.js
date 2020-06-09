@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 
 const initialState = {
@@ -21,8 +21,19 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case ('add'):
-            return {}
+        case ('ADD'):
+            return {
+                ...state,
+                additionalFeatures:state.additionalFeatures.filter(
+                    feature => feature.id !== action.payload.id
+                ),
+                car:{
+                    ...state.car,
+                    features: [...state.car.features, action.payload]
+                }
+            
+                }
+            
         case ('remove'):
             return {}
 
