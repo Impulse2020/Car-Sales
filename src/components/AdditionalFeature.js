@@ -10,6 +10,6 @@ const AdditionalFeature = props => {
   );
 };
 const add = event =>{
-  
+  console.log(event.target)
 }
 export default AdditionalFeature;

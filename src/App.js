@@ -4,7 +4,7 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-
+console.log(AdditionalFeatures)
 const App = () => {
   const state = {
     additionalPrice: 0,
@@ -31,7 +31,7 @@ const App = () => {
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <Total car={state.car} carprice={state.car.price} additionalPrice={state.additionalFeatures.price} />
       </div>
     </div>
   );
