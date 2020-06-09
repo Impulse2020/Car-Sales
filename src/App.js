@@ -1,25 +1,43 @@
 import React from 'react';
-
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-console.log(AdditionalFeatures)
-const App = () => {
+import { connect } from 'react-redux';
 
+
+
+
+
+console.log(AdditionalFeatures)
+const App = (props) => {
+  //removed state object, and moved it up to reducer
 
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
-        <Total car={state.car} carprice={state.car.price} additionalPrice={state.additionalFeatures.price} />
+        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
+        <Total car={props.car} carprice={props.car.price} additionalPrice={props.additionalFeatures.price} />
       </div>
     </div>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+
+  return{
+    car: state.car,
+    additionalFeatures:state.additionalFeatures,
+    additionalPrice:state.additionalPrice
+
+
+  }
+}
+
+
+
+export default connect(mapStateToProps, {})(App);
