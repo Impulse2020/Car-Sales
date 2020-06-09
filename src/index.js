@@ -6,4 +6,4 @@ import 'bulma/css/bulma.css';
 import './styles.scss';
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Provider store={store}>x<App /></Provider>, rootElement);
+ReactDOM.render(<Provider store={'store'}>x<App /></Provider>, rootElement);
