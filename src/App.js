@@ -22,6 +22,7 @@ const App = (props) => {
       <div className="box">
         <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
         <Total car={props.car} additionalPrice={props.additionalPrice } />
+        {console.log(props.additionalPrice)}
       </div>
     </div>
   );
@@ -35,8 +36,8 @@ const mapStateToProps = (state) => {
     additionalPrice:state.additionalPrice
 
 
-  }
-}
+  };
+};
 
 
 

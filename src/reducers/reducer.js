@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 
 const initialState = {
+    additionalPrice: 0,
     car: {
-        additionalPrice: 0,
         price: 26395,
         name: '2019 Ford Mustang',
         image:
           'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
-        features: [ {id: 1, name: 'V-6 engine', price: 1500}]
+        features: []
       },
       additionalFeatures: [
         { id: 1, name: 'V-6 engine', price: 1500 },
@@ -20,6 +20,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
+    console.log(state.additionalPrice);
     switch (action.type) {
         case ('ADD'):
             return {
@@ -30,12 +31,13 @@ export const reducer = (state = initialState, action) => {
                 car:{
                     ...state.car,
                     features: [...state.car.features, action.payload]
-                }
+                },
+                additionalPrice: state.additionalPrice + action.payload.price
+                
+                };
             
-                }
-            
-        case ('remove'):
-            return state
+        case ('REMOVE'):
+            return state;
 
         default:
             return state;
