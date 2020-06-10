@@ -1,7 +1,7 @@
 export const ADD = 'ADD';
 
 
-export const addFeature = () =>{
-    return {type: ADD, payload:""}
+export const addFeature = feature => {
+    return {type: ADD, payload: feature}
 
 }

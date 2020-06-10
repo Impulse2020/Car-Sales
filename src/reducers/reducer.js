@@ -35,7 +35,7 @@ export const reducer = (state = initialState, action) => {
                 }
             
         case ('remove'):
-            return {}
+            return state
 
         default:
             return state;
