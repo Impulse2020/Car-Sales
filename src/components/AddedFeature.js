@@ -4,10 +4,12 @@ const AddedFeature = props => {
   return (
     <li>
       {/* Add an onClick to run a function to remove a feature */}
-      <button className="button">X</button>
+      <button onClick= {remove} className="button"><h1>REMOVE</h1></button>
       {props.feature.name}
     </li>
   );
 };
-
+const  remove = event =>{
+  console.log(event)
+}
 export default AddedFeature;
